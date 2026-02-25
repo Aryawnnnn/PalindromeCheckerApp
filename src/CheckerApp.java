@@ -1,19 +1,27 @@
-import java.util.Scanner;
 public class CheckerApp {
     public static void main(String[] args) {
         System.out.println("====================================");
         System.out.println("WELCOME");
         System.out.println("====================================");
-        System.out.println("This application checks whether a word is a palindrome");
-        System.out.println("Stay tuned for upcoming features!!!");
+        System.out.println("Palindrome Checker - Character Array Version");
+        System.out.println("====================================");
+
         String word = "madam";
+        char[] characters = word.toCharArray();
+
+        int start = 0;
+        int end = characters.length - 1;
         boolean isPalindrome = true;
-        for (int i = 0; i < word.length() / 2; i++) {
-            if (word.charAt(i) != word.charAt(word.length() - 1 - i)) {
+
+        while (start < end) {
+            if (characters[start] != characters[end]) {
                 isPalindrome = false;
                 break;
             }
+            start++;
+            end--;
         }
+
         if (isPalindrome) {
             System.out.println(word + " is a Palindrome.");
         } else {
