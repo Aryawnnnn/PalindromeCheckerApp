@@ -1,25 +1,27 @@
+import java.util.Stack;
 public class CheckerApp {
     public static void main(String[] args) {
+
         System.out.println("====================================");
         System.out.println("WELCOME");
         System.out.println("====================================");
-        System.out.println("Palindrome Checker - Character Array Version");
+        System.out.println("Palindrome Checker - Stack Version");
         System.out.println("====================================");
 
         String word = "madam";
-        char[] characters = word.toCharArray();
+        Stack<Character> stack = new Stack<>();
 
-        int start = 0;
-        int end = characters.length - 1;
+        for (int i = 0; i < word.length(); i++) {
+            stack.push(word.charAt(i));
+        }
+
         boolean isPalindrome = true;
 
-        while (start < end) {
-            if (characters[start] != characters[end]) {
+        for (int i = 0; i < word.length(); i++) {
+            if (word.charAt(i) != stack.pop()) {
                 isPalindrome = false;
                 break;
             }
-            start++;
-            end--;
         }
 
         if (isPalindrome) {
