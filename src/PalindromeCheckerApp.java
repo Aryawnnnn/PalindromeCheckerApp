@@ -10,7 +10,7 @@ class Node {
     }
 }
 
-public class CheckerApp {
+public class PalindromeCheckerApp {
 
     static Node createList(String str) {
         Node head = null, tail = null;
